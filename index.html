@@ -562,7 +562,8 @@ const products = [
     id: "p01", category: "skincare", name: "N organic Basic スキンケア2点セット",
     tagline: "化粧水と乳液の2ステップで、毎日の保湿ケアをシンプルに続けやすいセットです。",
     features: ["化粧水＋乳液の2点セット", "毎日の保湿ケアに取り入れやすい", "最新情報・価格・在庫はAmazonで確認"],
-    amazonUrl: "https://amzn.to/4x2kCu6"
+    amazonUrl: "https://amzn.to/4x2kCu6",
+    imageUrl: "785728CE-535D-4593-B27C-1D7A3BF53820.png"
   },
   {
     id: "p02", category: "whitening", name: "N organic Bright 美白スキンケア2点セット",
@@ -673,7 +674,7 @@ function amazonIcon(){
 function productCard(p){
   return `
     <div class="product-card">
-      ${photoPlaceholder()}
+    ${p.imageUrl ? `<img src="${p.imageUrl}" alt="${p.name}" style="width:100%;height:220px;object-fit:cover;display:block;">` : photoPlaceholder()}
       <div class="product-body">
         <span class="chip">${CATEGORY_LABELS[p.category]}</span>
         <h3>${p.name}</h3>
